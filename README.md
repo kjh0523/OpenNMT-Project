@@ -1,13 +1,14 @@
-# OpenNMT based Korean-to-English Neural Machine Translation (NMT)
+# OpenNMT 기반의 한국어-영어 신경망 기계 번역 (NMT)
 This repo contains the source code and other details for a neural machine translation based on attention using pytorch. This model translates Korean into English.   
+이 저장소는 pytorch를 사용하는 어텐션을 기반으로 하는 신경망 기계 번역에 관한 소스코드와 다른 내용을 포함하고 있다. 이 모델은 한국어를 영어로 번역한다. 
 
-## Capstone Project (2020.02 ~ )
-* **Weekly Report** : [check here](https://github.com/SoYoungCho/Korean-English-NMT/wiki/Weekly-Report-%231) :)  
-From February 2020, the weekly report can be found there.
+## Capstone 프로젝트 (2020.02 ~ )
+* **주간 보고서** : [여기를 클릭](https://github.com/SoYoungCho/Korean-English-NMT/wiki/Weekly-Report-%231) :)  
+2020년 02월 부터 주간보고서는 여기서 찾을 있다.
 
 ---
 
-## Performance
+## 성능
 
 * **BLEU(Bilingual Evaluation Understudy) score** 
 
@@ -15,23 +16,23 @@ From February 2020, the weekly report can be found there.
 |---|:---:|:---:|:---:|:---:|
 | **33.55** | 64.6 | 40.0 | 27.5 | 19.4 | 
 
-* **Translation Sentence**  
+* **번역 문장**  
 
-#### Example 1 
+#### 예제 1 
 ```
 차를 마시러 공원에 가던 차 안에서 나는 그녀에게 차였다.
 ```
 ```
 > I was dumped by her in a car on the way to the park to drink tea .  
 ```
-#### Example 2  
+#### 예제 2  
 ```
 사과의 의미로 사과를 먹으며 사과했다.
 ```
 ```
 > I apologize while eating an apple for the meaning of an apology .
 ```
-#### Example 3
+#### 예제 3
 ```
 내가 그린 기린 그림은 긴 기린 그림이냐, 그냥 그린 기린 그림이냐?
 ```
@@ -41,13 +42,13 @@ From February 2020, the weekly report can be found there.
 ---
 
 
-## Dataset
+## 데이타셋
 
-* Preprocess 
+* 전처리 
   + `Delete` the sentence with the length of 149(Korean) or more and 387(English) or more based on space.
   + `Delete` the sentence containing some special characters.
   
-* Configuration 
+* 설정
 
 | <center>Dataset</center> | <center>Sentences</center> | <center>Download</center> | 
 |---|:---:|---|  
@@ -55,31 +56,31 @@ From February 2020, the weekly report can be found there.
 
 ---
 
-## How to use
+## 사용법
 
-### Step 1. Preprocess the data
+### 단계 1. 전처리 데이타
 ```
 !python preprocess.py
 ```
 The source text file(`src`) and target text file(`tgt`) are tokenized through `Mecab`+`SentencePiece`.
 
-### Step 2. Train the model
+### Step 2. 모델 훈련
 ```
 !python train.py
 ```
 If you want to continue training the model, add `--train_from (model path)/model.pt` later.
 
-### Step 3. Translate
+### Step 3. 번역
 ```
 !python translate.py -model data/model/model.pt -src data/src-test.txt -tgt data/tgt-test.txt -replace_unk -verbose -gpu 0
 ```
 
-### Step 4. Scoring the model
+### Step 4. 모델 평가
 ```
 !perl tools/multi-bleu.perl data/tgt-test.txt < data/pred.txt
 ```
 
-### tep 5. Excute GUI
+### tep 5. 그래픽 사용자 인터페이스 실행
 ```
 !pyhton gui.py
 ```
@@ -88,5 +89,5 @@ and `"data/pred.txt"` to `"data/demo/EnglishTokenOutput.txt"` of `translate_opts
 
 ---
 
-## Reference
+## 
 https://github.com/OpenNMT/OpenNMT-py

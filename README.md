@@ -89,5 +89,5 @@ and `"data/pred.txt"` to `"data/demo/EnglishTokenOutput.txt"` of `translate_opts
 
 ---
 
-## 
+## 참고 
 https://github.com/OpenNMT/OpenNMT-py

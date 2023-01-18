@@ -58,6 +58,11 @@ This repo contains the source code and other details for a neural machine transl
 
 ## 사용법
 
+### 단계 0. 소스 다운로드 하기
+```
+git clone https://github.com/kjh0523/OpenNMT-Project.git
+```
+
 ### 단계 1. 전처리 데이타
 ```
 !python preprocess.py
